@@ -1,0 +1,31 @@
+<!-- <main [ngClass]="{ 'dark-mode': isDarkMode, 'light-mode': !isDarkMode }"> -->
+  <!-- <router-outlet> </router-outlet> -->
+<!-- </main> -->
+<!-- <a routerLink="/header">Go to Header</a>
+<router-outlet></router-outlet> -->
+
+<header id="header">
+  <app-header [inputFromParent]="isDarkMode"></app-header>
+</header>
+
+
+
+<main [ngClass]="{ 'dark-mode': isDarkMode, 'light-mode': !isDarkMode }">
+  <router-outlet> </router-outlet>
+</main>
+
+<!-- <a href="#header"><div class="up">
+  <i class="fa-brands fa-upwork" [ngStyle]="{'color': isDarkMode ? 'white' : 'black'}"></i>
+</div>
+</a> -->
+<div class="up" (click)="scrollToTop()">
+  <i class="fa-brands fa-upwork" [ngStyle]="{'color': isDarkMode ? 'white' : 'black'}"></i>
+</div>
+<div class="mode">
+ <i class="fa-solid fa-moon"  (click)="toggleMode()" *ngIf="!isDarkMode"></i>
+ <i class="fa-solid fa-sun mySun" (click)="toggleMode()" *ngIf="isDarkMode"></i>
+</div>
+
+<footer>
+  <app-footer></app-footer>
+</footer>
